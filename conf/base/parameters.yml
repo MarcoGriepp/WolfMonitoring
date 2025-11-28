@@ -1,0 +1,21 @@
+wolf_deaths:
+  data_cleaning:
+    remove_duplicates: true
+
+
+wolf_observations:
+  data_cleaning:
+    remove_duplicates: true
+    columns_mapping:
+      Datum waarneming: "observation_date"
+      Provincie: "province"
+      Leefgebied of gemeente: "location"
+      Type waarneming: "observation_type"
+      Classificering: "classification"
+      Individu: "individuals"
+    region_mapping: ${globals:city_to_larger_region_map}
+
+
+wolf_damages:
+  data_cleaning:
+    remove_duplicates: true

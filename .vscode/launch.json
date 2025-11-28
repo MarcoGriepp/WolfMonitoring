@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Kedro (debug)",
+      "type": "python",
+      "request": "launch",
+      "module": "kedro",
+      "args": ["run"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "env": {}
+    },
+    {
+      "name": "Run Kedro (with params)",
+      "type": "python",
+      "request": "launch",
+      "module": "kedro",
+      "args": ["run", "--pipeline", "data_cleaning"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": false,
+      "env": {}
+    }
+  ]
+}

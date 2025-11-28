@@ -2,3 +2,50 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+# Raw data sources
+wolf_deaths:
+  type: partitions.PartitionedDataset
+  path: data/01_raw/wolf_deaths/
+  dataset:
+    type: pandas.ExcelDataset
+    load_args:
+      parse_dates: ["Datum omgekomen", "Voor het eerst in NL vastgesteld op DNA"]
+
+wolf_deaths_concatenated:
+  type: pandas.ExcelDataset
+  filepath: data/02_intermediate/wolf_deaths_concatenated.xlsx
+
+
+
+# ____________________________________________________________________________
+
+
+wolf_observations:
+  type: partitions.PartitionedDataset
+  path: data/01_raw/wolf_observations/
+  dataset:
+    type: pandas.ExcelDataset
+    load_args:
+      parse_dates: ["Datum waarneming"]
+
+wolf_observations_concatenated:
+  type: pandas.ExcelDataset
+  filepath: data/02_intermediate/wolf_observations_concatenated.xlsx
+
+
+wolf_observations_cleaned:
+  type: pandas.ExcelDataset
+  filepath: data/03_primary/wolf_observations_cleaned.xlsx
+
+wolf_damages:
+  type: partitions.PartitionedDataset
+  path: data/01_raw/wolf_damages/
+  dataset:
+    type: pandas.ExcelDataset
+    load_args:
+      parse_dates: ["Datum melding"]
+
+wolf_damages_concatenated:
+  type: pandas.ExcelDataset
+  filepath: data/02_intermediate/wolf_damages_concatenated.xlsx

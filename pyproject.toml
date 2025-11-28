@@ -16,6 +16,14 @@ dependencies = [
     "jupyterlab>=3.0",
     "notebook",
     "kedro~=1.1.1",
+    "numpy>=2.2.6",
+    "pandas>=2.3.3",
+    "scipy>=1.15.3",
+    "kedro-datasets>=9.0.0",
+    "kedro-telemetry>=0.6.5",
+    "pyarrow>=22.0.0",
+    "fastparquet>=2024.11.0",
+    "openpyxl>=3.1.5",
 ]
 
 [project.scripts]
@@ -68,3 +76,6 @@ select = [
 ignore = [
     "E501",
 ]
+
+[tool.kedro_telemetry]
+project_id = "10084917fc264f028296b5d9d00a8825"
